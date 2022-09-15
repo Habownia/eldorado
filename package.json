@@ -5,12 +5,12 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "env-cmd -f .env gatsby develop",
+    "build": "env-cmd -f .env.production gatsby build",
+    "dev": "env-cmd -f .env.development gatsby develop",
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "fix": "eslint --fix",
-    "serve": "gatsby serve",
+    "preview": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },

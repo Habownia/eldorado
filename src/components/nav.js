@@ -11,27 +11,30 @@ function Nav() {
     setShow(prevState => !prevState)
   }
 
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+  // build bug
+  if (typeof window !== `undefined`) {
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
 
-  React.useEffect(() => {
-    function watchWidth() {
-      setWindowWidth(window.innerWidth)
-    }
+    React.useEffect(() => {
+      function watchWidth() {
+        setWindowWidth(window.innerWidth)
+      }
 
-    window.addEventListener("resize", watchWidth)
+      window.addEventListener("resize", watchWidth)
 
-    return function () {
-      window.removeEventListener("resize", watchWidth)
-    }
-  }, [])
+      return function () {
+        window.removeEventListener("resize", watchWidth)
+      }
+    }, [])
 
-  useEffect(() => {
-    if (windowWidth > 639) {
-      setShow(true)
-    } else {
-      setShow(false)
-    }
-  }, [windowWidth])
+    useEffect(() => {
+      if (windowWidth > 639) {
+        setShow(true)
+      } else {
+        setShow(false)
+      }
+    }, [windowWidth])
+  }
 
   return (
     <div className="fixed h-16 text-gray-400 navbar bg-base-100 z-50">

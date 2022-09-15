@@ -3,6 +3,7 @@ module.exports = {
     title: "Gatsby site",
     author: "Joe Mama",
   },
+
   plugins: [
     {
       resolve: "gatsby-source-contentful",
