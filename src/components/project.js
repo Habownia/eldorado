@@ -3,9 +3,7 @@ import React from "react"
 function Project(props) {
   return (
     <>
-      <div
-        className={`card w-96 h-60 bg-${props.color} shadow-xl text-gray-900`}
-      >
+      <div className={`card w-96 h-60 bg-violet-300 shadow-xl text-gray-900`}>
         <div className="card-body">
           <h2 className="card-title">{props.title}</h2>
           <p>{props.desc}</p>

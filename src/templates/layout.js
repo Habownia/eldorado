@@ -7,7 +7,7 @@ function Layout(props) {
   return (
     <div>
       <Nav />
-      {props.children}
+      <div className="pt-16 min-h-[90vh]">{props.children}</div>
       <Footer />
     </div>
   )

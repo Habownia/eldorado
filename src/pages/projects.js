@@ -15,19 +15,16 @@ function Projects() {
           title="Trzycierz.tk"
           desc="Prosty projekt z wykorzystaniem HTML, CSS, i JS"
           link="trzycierz.tk"
-          color="violet-400"
         />
         <Project
           title="Social Credit Test"
           desc="Test stworzony w Vanilla JS"
           link="trzycierz.tk/sct"
-          color="violet-400"
         />
         <Project
           title="TrzycierzPass"
           desc="Trzycierski generator haseł"
           link="trzycierz.tk/pass"
-          color="violet-400"
         />
       </div>
     </Layout>
