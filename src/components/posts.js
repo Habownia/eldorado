@@ -14,7 +14,7 @@ function Posts(props) {
             id
             title
             slug
-            publishedDate(fromNow: true)
+            publishedDate(formatString: "DD.MM.YYYY")
             body {
               references {
                 ... on ContentfulAsset {

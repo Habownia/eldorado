@@ -1,11 +1,11 @@
 {
-  "name": "trzycierzblog",
+  "name": "eldorado",
   "private": true,
-  "description": "Extra nice trzycierzblog",
+  "description": "Eldorado - trzycierski blog",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "mit",
   "scripts": {
-    "build": "env-cmd -f .env.production netlify build",
+    "build": "env-cmd -f .env.production gatsby build",
     "dev": "env-cmd -f .env.development gatsby develop",
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

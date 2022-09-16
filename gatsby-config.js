@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Trzycierzblog`,
-    author: `Joe Mama`,
-    description: `Example project for the Gatsby Head API`,
+    title: `Eldorado`,
+    author: `Trzycierz`,
+    description: `Eldorado - Trzycierski blog`,
     twitterUsername: `@gatsbyjs`,
-    image: `/gatsby-icon.png`,
-    siteUrl: `https://www.trzycierzblog.ml`,
+    image: `/src/icons/icon.svg`,
+    siteUrl: `https://www.teldorado.tk`,
   },
 
   plugins: [

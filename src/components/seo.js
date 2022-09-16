@@ -30,7 +30,7 @@ export const Seo = ({ title, description, children }) => {
 
   return (
     <>
-      <title>{seo.title}</title>
+      <title>{`${defaultTitle} | ${seo.title}`}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <link rel="icon" href="../icons/icon.svg" />

@@ -1,8 +1,20 @@
 import React from "react"
 
+import { graphql, useStaticQuery } from "gatsby"
+
 import kapliczka from "../image/kapliczka.jpg"
 
 function Hero(props) {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <div
       className="hero min-h-screen"
@@ -11,7 +23,9 @@ function Hero(props) {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-4xl font-bold">Witaj na blogu Trzycierza</h1>
+          <h1 className="md:w-max mb-5 text-3xl md:text-4xl font-bold">
+            {data.site.siteMetadata.title} - trzycierski blog
+          </h1>
           <p className="mb-5">
             Jest to blog pięknej miejscowości Trzycierz, która ma bogatą
             historię, piękne zabytki i wspaniałych ludzi!
