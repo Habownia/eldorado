@@ -29,7 +29,6 @@ module.exports = {
     // Tailwind
     "gatsby-plugin-postcss",
     // manifest.json
-    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -45,5 +44,7 @@ module.exports = {
         },
       },
     },
+    // netlify
+    "gatsby-plugin-netlify",
   ],
 }
