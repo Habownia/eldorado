@@ -44,7 +44,10 @@ function Nav() {
         </Link>
       </div>
       <div className="flex-none">
-        <button className="block sm:hidden btn btn-square btn-ghost">
+        <button
+          aria-label="burger"
+          className="block sm:hidden btn btn-square btn-ghost"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,14 +64,14 @@ function Nav() {
           </svg>
         </button>
         <ul
-          className={`absolute flex flex-col items-center justify-center h-64 gap-3 p-5 rounded-lg sm:flex-row top-2 right-2 sm:static menu menu-horizontal sm:p-0 bg-slate-800 sm:bg-inherit w-52 sm:w-auto sm:h-auto z-50 ${
+          className={`absolute flex flex-col items-center justify-center h-52 gap-3 p-5 rounded-lg sm:flex-row top-2 right-2 sm:static menu menu-horizontal sm:p-0 bg-slate-800 sm:bg-inherit w-40 sm:w-auto sm:h-auto z-50 ${
             show ? "flex" : "hidden"
           }`}
           ref={ul}
         >
           <AiFillCloseCircle
             size={30}
-            className="absolute top-2 right-2 sm:hidden"
+            className="absolute top-2 right-2 sm:hidden text-white"
             color="rgb(167 139 250)"
             onClick={showBurger}
           />
@@ -76,7 +79,7 @@ function Nav() {
             <Link
               to="/"
               className="btn btn-ghost"
-              activeClassName="bg-violet-600"
+              activeClassName="bg-violet-700"
             >
               Home
             </Link>
@@ -85,7 +88,7 @@ function Nav() {
             <Link
               to="/blog"
               className="btn btn-ghost"
-              activeClassName="bg-violet-600"
+              activeClassName="bg-violet-700"
             >
               Blog
             </Link>
@@ -94,7 +97,7 @@ function Nav() {
             <Link
               to="/projects"
               className="btn btn-ghost"
-              activeClassName="bg-violet-600"
+              activeClassName="bg-violet-700"
             >
               Projekty
             </Link>

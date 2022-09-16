@@ -40,7 +40,7 @@ function Posts(props) {
   `)
 
   const postsArr = data.allContentfulBlogPost.edges
-    .filter((item, index) => index <= 4)
+    .filter((item, index) => index <= 6)
     .map(item => {
       let image
       if (item.node.body.references[0]) {

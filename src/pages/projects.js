@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../templates/layout"
 import Project from "../components/project"
+import { Seo } from "../components/seo"
 
 function Projects() {
   return (
@@ -30,5 +31,7 @@ function Projects() {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Projekty" />
 
 export default Projects

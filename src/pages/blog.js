@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../templates/layout"
+import { Seo } from "../components/seo"
 
 import kapliczka from "../image/kapliczka.jpg"
 
@@ -84,5 +85,7 @@ function Blog() {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Blog" />
 
 export default Blog

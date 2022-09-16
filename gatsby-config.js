@@ -1,7 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby site",
-    author: "Joe Mama",
+    title: `Trzycierzblog`,
+    author: `Joe Mama`,
+    description: `Example project for the Gatsby Head API`,
+    twitterUsername: `@gatsbyjs`,
+    image: `/gatsby-icon.png`,
+    siteUrl: `https://www.trzycierzblog.ml`,
   },
 
   plugins: [
@@ -24,5 +28,22 @@ module.exports = {
     },
     // Tailwind
     "gatsby-plugin-postcss",
+    // manifest.json
+    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `TrzycierzBlog`,
+        short_name: `TBlog`,
+        start_url: `/`,
+        background_color: `#2A303C`,
+        theme_color: `#2A303C`,
+        display: `standalone`,
+        icon: "src/icons/icon.svg",
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
   ],
 }

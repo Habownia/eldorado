@@ -1,10 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
 
-// import Head from "../components/head"
+import { FaLongArrowAltLeft } from "react-icons/fa"
+
+import { Seo } from "../components/seo"
 import Layout from "./layout"
 
 export const query = graphql`
@@ -49,8 +51,17 @@ function Blog({ data }) {
           </a>
         )
       },
+      [BLOCKS.HEADING_1]: (node, children) => {
+        return <h1 className="font-bold text-3xl">{children}</h1>
+      },
       [BLOCKS.HEADING_2]: (node, children) => {
-        return <h2>{children}</h2>
+        return <h2 className=" font-bold text-2xl">{children}</h2>
+      },
+      [BLOCKS.HEADING_3]: (node, children) => {
+        return <h3 className=" font-bold text-lg">{children}</h3>
+      },
+      [BLOCKS.HEADING_4]: (node, children) => {
+        return <h4 className=" font-bold text-md">{children}</h4>
       },
 
       [BLOCKS.EMBEDDED_ASSET]: node => {
@@ -78,7 +89,6 @@ function Blog({ data }) {
   const images = renderRichText(data.contentfulBlogPost.body, options).map(
     elem => {
       if (typeof elem.type === "symbol") {
-        console.log(elem)
         return (
           <GatsbyImage
             key={elem.key}
@@ -109,10 +119,20 @@ function Blog({ data }) {
           <span>{data.contentfulBlogPost.publishedDate}</span>
         </div>
         <div>{text}</div>
-        <div className="flex flex-wrap justify-center gap-10 pb-10">{images}</div>
+        <div className="flex flex-wrap justify-center gap-10 pb-10">
+          {images}
+        </div>
+        <Link
+          to="/blog"
+          className="btn btn-ghost w-24 bg-violet-800 hover:scale-110"
+        >
+          <FaLongArrowAltLeft size={30} className=" drop-shadow-xl " />
+        </Link>
       </main>
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Wpis" />
 
 export default Blog

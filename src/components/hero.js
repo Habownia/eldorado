@@ -16,7 +16,11 @@ function Hero(props) {
             Jest to blog pięknej miejscowości Trzycierz, która ma bogatą
             historię, piękne zabytki i wspaniałych ludzi!
           </p>
-          <button className="btn btn-primary" onClick={props.handleScroll}>
+          <button
+            aria-label="new posts"
+            className="btn btn-primary"
+            onClick={props.handleScroll}
+          >
             Najnowsze posty
           </button>
         </div>
