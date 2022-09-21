@@ -16,44 +16,18 @@ function Nav() {
     }
   `)
 
-  const ul = useRef(null)
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   function showBurger() {
     setShow(prevState => !prevState)
   }
 
-  // build bug
-  if (typeof window !== `undefined`) {
-    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
-
-    React.useEffect(() => {
-      function watchWidth() {
-        setWindowWidth(window.innerWidth)
-      }
-
-      window.addEventListener("resize", watchWidth)
-
-      return function () {
-        window.removeEventListener("resize", watchWidth)
-      }
-    }, [])
-
-    useEffect(() => {
-      if (windowWidth > 639) {
-        setShow(true)
-      } else {
-        setShow(false)
-      }
-    }, [windowWidth])
-  }
-
   return (
-    <div className="fixed h-16 text-gray-400 navbar bg-base-100 z-50">
+    <div className="fixed z-50 h-16 text-gray-400 navbar bg-base-100">
       <div className="flex-1">
         <Link
           to="/"
-          className="text-xl normal-case btn btn-ghost gap-1 px-3 text-violet-300"
+          className="gap-1 px-3 text-xl normal-case btn btn-ghost text-violet-300"
         >
           <SiGoldenline size={37} className="pr-2" />
           {data.site.siteMetadata.title}
@@ -68,16 +42,17 @@ function Nav() {
           <VscThreeBars size={35} className="m-auto" />
         </button>
         <ul
-          className={`absolute flex flex-col items-center justify-center h-52 gap-3 p-5 rounded-lg sm:flex-row top-2 right-2 sm:static menu menu-horizontal sm:p-0 bg-slate-800 sm:bg-inherit w-40 sm:w-auto sm:h-auto z-50 ${
+          className={`absolute sm:flex flex-col items-center justify-center h-52 gap-3 rounded-lg sm:flex-row top-2 right-2 sm:static sm:p-0 bg-slate-800 sm:bg-inherit w-52 sm:w-auto sm:h-auto z-50  ${
             show ? "flex" : "hidden"
           }`}
-          ref={ul}
         >
           <AiFillCloseCircle
             size={30}
-            className="absolute top-2 right-2 sm:hidden text-white"
+            className="absolute text-white top-2 right-2 sm:hidden"
             color="rgb(167 139 250)"
-            onClick={showBurger}
+            onClick={() => {
+              setShow(false)
+            }}
           />
           <li>
             <Link

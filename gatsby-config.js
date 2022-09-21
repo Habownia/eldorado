@@ -4,7 +4,7 @@ module.exports = {
     author: `Trzycierz`,
     description: `Eldorado - Trzycierski blog`,
     twitterUsername: `@gatsbyjs`,
-    image: `/src/icons/icon.svg`,
+    image: `./static/favicon.svg`,
     siteUrl: `https://www.teldorado.tk`,
   },
 
@@ -44,6 +44,8 @@ module.exports = {
         },
       },
     },
+    // service worker
+    `gatsby-plugin-offline`,
     // netlify
     "gatsby-plugin-netlify",
   ],

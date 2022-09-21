@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
+import icon from "../../static/favicon.svg"
+
 export const Seo = ({ title, description, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -33,7 +35,7 @@ export const Seo = ({ title, description, children }) => {
       <title>{`${defaultTitle} | ${seo.title}`}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      <link rel="icon" href="../icons/icon.svg" />
+      <link rel="icon" href={icon} />
       <meta name="theme-color" content="#317EFB" />
       {children}
     </>
